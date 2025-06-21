@@ -4,7 +4,7 @@ import { Button } from '../ui/button'
 
 function Header() {
   return (
-    <div className='flex justify-between items-center p-4'>
+    <div className='flex justify-between items-center p-4 shadow-md'>
         <Image src={'/logo.svg'} alt='logo'
         width={180}
         height={140}
