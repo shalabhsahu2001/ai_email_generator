@@ -2,6 +2,7 @@
 import React from 'react'
 import { Button } from '../ui/button';
 import { useGoogleLogin } from '@react-oauth/google';
+import axios from 'axios';
 
 function SignInButton() {
 
@@ -13,7 +14,11 @@ function SignInButton() {
         { headers: { Authorization: 'Bearer '+tokenResponse?.access_token} },
         );
 
-        console.log(userInfo);
+        console.log(userInfo.data);
+        //localSave
+        if(typeof window !== undefined) {
+            localStorage.setItem('userDetail', JSON.stringify(userInfo?.data));
+        }
     },
     onError: errorResponse => console.log(errorResponse),
     });
