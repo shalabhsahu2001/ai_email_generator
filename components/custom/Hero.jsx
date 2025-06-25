@@ -21,7 +21,7 @@ function Hero() {
       </div>
       <Image src={'/landing.png'} alt='landing' 
       width={1000} height={800}
-      className='mt-1 rounded-xl'/>
+      className='mt-10 rounded-xl'/>
     </div>
   )
 }
