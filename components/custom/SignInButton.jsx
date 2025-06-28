@@ -23,11 +23,16 @@ function SignInButton() {
             localStorage.setItem('userDetail', JSON.stringify(user));
         }
         // save to database
-        await createUser({
-            name:user?.name,
-            email:user?.email,
-            picture:user?.picture
-        })
+        try {
+                await createUser({
+                name:user?.name,
+                email:user?.email,
+                picture:user?.picture
+            });
+            console.log("data saved to convxex");
+        } catch (error) {
+            console.log("unable to save data", error);
+        }
     },
     onError: errorResponse => console.log(errorResponse),
     });
